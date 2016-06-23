@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SchoolTextBook</string>
+    <string-array name="sort_keys">
+        <item>Language</item>
+        <item>Grade</item>
+    </string-array>
 </resources>

@@ -9,24 +9,23 @@ public class Books {
 
     private String name;
     private String authors;
-    private String image;
+    private String cover_image;
     private String objectId;
     private String publisher;
-    private String published_at;
+    private int published_at;
     private String ISBN;
     private String contingent;
     private String language;
-    private Date created;
+    // private Date created;
     private int id;
 
-    public String getImage() {
-        return image;
+    public String getCover_image() {
+        return cover_image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setCover_image(String cover_image) {
+        this.cover_image = cover_image;
     }
-
 
     public String getAuthors() {
         return authors;
@@ -35,8 +34,6 @@ public class Books {
     public void setAuthors(String authors) {
         this.authors = authors;
     }
-
-
 
     public String getName() {
         return name;
@@ -62,11 +59,11 @@ public class Books {
         this.publisher = publisher;
     }
 
-    public String getPublished_at() {
+    public int getPublished_at() {
         return published_at;
     }
 
-    public void setPublished_at(String published_at) {
+    public void setPublished_at( int published_at ) {
         this.published_at = published_at;
     }
 
@@ -94,6 +91,7 @@ public class Books {
         this.language = language;
     }
 
+    /*
     public Date getCreated() {
         return created;
     }
@@ -101,6 +99,7 @@ public class Books {
     public void setCreated(Date created) {
         this.created = created;
     }
+    */
 
     public int getId() {
         return id;
