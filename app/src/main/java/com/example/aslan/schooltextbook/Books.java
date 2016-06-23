@@ -16,8 +16,24 @@ public class Books {
     private String ISBN;
     private String contingent;
     private String language;
-    // private Date created;
-    private int id;
+    private int publisher_price, publisher_quantity, id;
+    private Date created;
+
+    public int getPublisher_price() {
+        return publisher_price;
+    }
+
+    public void setPublisher_price(int publisher_price) {
+        this.publisher_price = publisher_price;
+    }
+
+    public int getPublisher_quantity() {
+        return publisher_quantity;
+    }
+
+    public void setPublisher_quantity(int publisher_quantity) {
+        this.publisher_quantity = publisher_quantity;
+    }
 
     public String getCover_image() {
         return cover_image;
@@ -91,7 +107,6 @@ public class Books {
         this.language = language;
     }
 
-    /*
     public Date getCreated() {
         return created;
     }
@@ -99,7 +114,6 @@ public class Books {
     public void setCreated(Date created) {
         this.created = created;
     }
-    */
 
     public int getId() {
         return id;

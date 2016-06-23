@@ -67,6 +67,10 @@ public class BookAdapter extends BaseAdapter {
         return convertView;
     }
 
+    public void setBooks(List<Books> books) {
+        this.books = books;
+    }
+
     private class ViewHolder {
         ImageView frontPageImageView;
         TextView bookTitleTextView, bookAuthorTextView;

@@ -13,7 +13,10 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.BackendlessDataQuery;
+import com.backendless.persistence.QueryOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListOfBooksActivity extends AppCompatActivity {
@@ -21,7 +24,8 @@ public class ListOfBooksActivity extends AppCompatActivity {
     private ListView listView;
     private Button sortButton;
     private Spinner spinner;
-    private String sortKeys[];
+    private String sortKeys[], ks[];
+    public BookAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +35,13 @@ public class ListOfBooksActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.booksListView);
         spinner = (Spinner) findViewById(R.id.searchKeysSpinner);
         sortKeys = getResources().getStringArray(R.array.sort_keys);
+        ks = getResources().getStringArray(R.array.sort_keys2);
         spinner.setAdapter(new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,sortKeys));
 
         (sortButton = (Button) findViewById(R.id.sortButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                onSortButtonClick();
             }
         });
 
@@ -43,6 +49,8 @@ public class ListOfBooksActivity extends AppCompatActivity {
             @Override
             public void handleResponse(BackendlessCollection<Books> response) {
                 Log.d(TAG,"Success in initial downloading the books");
+                BackendlessDataQuery query = new BackendlessDataQuery();
+                query.setPageSize(100);
                 displayBooks(response.getData());
                 Log.d(TAG,"Size of = "+response.getData().size());
             }
@@ -53,10 +61,36 @@ public class ListOfBooksActivity extends AppCompatActivity {
         });
     }
 
-    void displayBooks( List<Books> books ) {
-        BookAdapter adapter = new BookAdapter(this,books);
-        listView.setAdapter(adapter);
+    private void onSortButtonClick() {
+        final String key = ks[spinner.getSelectedItemPosition()];
+        BackendlessDataQuery query = new BackendlessDataQuery();
+        QueryOptions options = new QueryOptions();
+        List<String> lst = new ArrayList<>();
+        lst.add(key);
+        options.setSortBy(lst);
+        query.setQueryOptions(options);
+        query.setPageSize(100);
+        Backendless.Data.of(Books.class).find(query, new AsyncCallback<BackendlessCollection<Books>>() {
+            @Override
+            public void handleResponse(BackendlessCollection<Books> response) {
+                Log.d(TAG,"Success in sorting by key = "+key);
+                displayBooks(response.getData());
+            }
+            @Override
+            public void handleFault(BackendlessFault fault) {
+                Log.e(TAG,"Failure to sort by "+key+": "+fault.getMessage());
+            }
+        });
     }
 
+    void displayBooks( List<Books> books ) {
+        if ( adapter == null )
+            adapter = new BookAdapter(this,books);
+        else {
+            adapter.setBooks(books);
+            adapter.notifyDataSetChanged();
+        }
+        listView.setAdapter(adapter);
+    }
 }
 
