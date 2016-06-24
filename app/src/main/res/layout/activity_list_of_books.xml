@@ -3,37 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.aslan.schooltextbook.ListOfBooksActivity"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-        <Button
-            android:id="@+id/sortButton"
-            android:layout_width="0dp"
-            android:layout_weight="0.30"
-            android:text="Sort by"
-            android:layout_height="@dimen/row_book_height"
-            android:minHeight="@dimen/row_book_height"
-            android:maxHeight="@dimen/row_book_height"
-            />
         <Spinner
-            android:layout_marginLeft="10dp"
-            android:id="@+id/searchKeysSpinner"
             android:layout_width="0dp"
-            android:layout_height="@dimen/row_book_height"
-            android:minHeight="@dimen/row_book_height"
-            android:maxHeight="@dimen/row_book_height"
-            android:layout_weight="0.70"
+            android:id="@+id/byGrade"
+            android:layout_height="@dimen/row_spin_height"
+            android:minHeight="@dimen/row_spin_height"
+            android:maxHeight="@dimen/row_spin_height"
+            android:layout_weight="0.45"
             >
         </Spinner>
+        <Spinner
+            android:layout_width="0dp"
+            android:id="@+id/byLang"
+            android:layout_height="@dimen/row_spin_height"
+            android:minHeight="@dimen/row_spin_height"
+            android:maxHeight="@dimen/row_spin_height"
+            android:layout_weight="0.45"
+            >
+        </Spinner>
+        <ImageButton
+            android:id="@+id/fab"
+            android:layout_width="0dp"
+            android:layout_weight="0.10"
+            android:layout_height="@dimen/row_spin_height"
+            android:src="@android:drawable/ic_search_category_default"
+            android:layout_marginRight="10dp"
+            />
     </LinearLayout>
+
     <ListView
         android:id="@+id/booksListView"
+        android:dividerHeight="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
+
 </LinearLayout>

@@ -3,15 +3,25 @@
     android:orientation="horizontal" 
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_marginTop="10dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/frontPageImageView"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="4dip"
+        app:riv_border_width="1dip"
+        app:riv_border_color="#333333"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="repeat"
         android:layout_width="0dp"
         android:layout_height="@dimen/row_book_height"
         android:minHeight="@dimen/row_book_height"
         android:maxHeight="@dimen/row_book_height"
         android:layout_weight="0.25"
-        />
+        android:layout_marginBottom="10dp"
+        app:riv_oval="false" />
     <LinearLayout
+        android:layout_marginLeft="15dp"
         android:layout_width="0dp"
         android:layout_height="@dimen/row_book_height"
         android:minHeight="@dimen/row_book_height"
@@ -23,16 +33,25 @@
             android:id="@+id/bookTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.70"
+            android:layout_weight="0.45"
             android:text="Book Title"
-            android:textSize="20sp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
             />
         <TextView
             android:id="@+id/bookAuthorTextView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.30"
+            android:layout_weight="0.60"
             android:text="Authors"
+            android:textSize="11sp"
+            android:layout_gravity="top"
             />
     </LinearLayout>
 </LinearLayout>

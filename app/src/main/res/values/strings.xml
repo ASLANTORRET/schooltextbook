@@ -1,11 +1,28 @@
 <resources>
     <string name="app_name">SchoolTextBook</string>
-    <string-array name="sort_keys">
-        <item>Language</item>
-        <item>Grade</item>
+    <string name="wildcard">все</string>
+    <string-array name="sort_keys_for_grade">
+        <item><i>все</i></item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
     </string-array>
-    <string-array name="sort_keys2">
-        <item>language</item>
-        <item>contingent</item>
+        <string-array name="sort_keys_for_lang">
+        <item><i>все</i></item>
+        <item>каз</item>
+        <item>рус</item>
+        <item>матем</item>
+        <item>гуманит</item>
     </string-array>
+    <string name="button_one"><i>SchoolTextBook</i></string>
+    <string name="button_two"><i>ExternalResources</i></string>
 </resources>

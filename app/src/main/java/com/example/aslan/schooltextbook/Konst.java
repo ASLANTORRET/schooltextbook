@@ -7,5 +7,7 @@ public class Konst {
     public static final String APP_ID = "DE68208D-28FE-F90B-FFAB-D8831EFD7B00";
     public static final String CLIENT_KEY = "A9091ED4-9D3F-968E-FF62-132E4BE0E200";
     public static final String VERSION = "v1";
+    public static final int WIDTH = 30;
+    public static final int MAXLINES = 100;
 };
 
