@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aslan.schooltextbook.BookDetailsActivity"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/coverImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                />
+
+            <com.example.aslan.schooltextbook.BookTextView
+                android:layout_marginTop="30dp"
+                android:id="@+id/nameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="30sp"
+                android:gravity="center_horizontal"/>
+
+            <com.example.aslan.schooltextbook.BookTextView
+                android:id="@+id/authorsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+
+            <com.example.aslan.schooltextbook.BookTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Описание"
+                android:textColor="#40031d"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/languageTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Форма обучения:Казахский язык обучения "
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/publisherTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Издательство: Атамура"/>
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/publishedAtTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Год выпуска: 2015"/>
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/contingentTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Год обучения: 1 класс"/>
+
+            </LinearLayout>
+
+            <com.example.aslan.schooltextbook.BookTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Предложения"
+                android:textColor="#40031d"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/customborder"
+                >
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/publisherOfferTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Издательство Атамура"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/publisherPriceTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Цена: 1000 KZT"
+                    />
+
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:id="@+id/publisherQuantityTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Количество: 10 шт."
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Посмотреть контакты"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/customborder"
+                >
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Интернет - магазин Flip.kz"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Цена: 1100 KZT"
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Наличие: Есть"
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Количество: 30 шт."
+                    />
+
+                <com.example.aslan.schooltextbook.BookTextView
+                    android:layout_width="match_parent"
+                    android:autoLink="phone"
+                    android:layout_height="wrap_content"
+                    android:text="Посмотреть контакты"
+                    />
+
+            </LinearLayout>
+
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>
